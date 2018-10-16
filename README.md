@@ -21,15 +21,13 @@ In this part I will explain the steps of tabu search for the travelling salesper
 
 ### Pseudocode
 
-<ol>
-<li> **(Initialization)** Construct an initial tour by means of a construction heuristic.  </li>
-<li> **(Insertion Partitions)** Determine all insertion partitions according to proximity measure and retain 10 of them. </li>
+1. **(Initialization)** Construct an initial tour by means of a construction heuristic. 
+2. **(Insertion Partitions)** Determine all insertion partitions according to proximity measure and retain 10 of them. 
 Repeat Step **3-8** for *$10000$* iterations:
-<li> **(Insertion Candidate)** Randomly choose one insertion partition and determine the best insertion candidate from this partition </li>
-<li> **(Deletion Chains)** Determine the deletion chains. </li>
-<li> **(Deletion Candidate)** Determine the best deletion candidate from deletion chains </li>
-<li> **(Insertion or Deletion)** Compare the results of the insertion and deletion then apply the best one. If the best move is deletion then declare all vertices of deletion tabu for $\theta$ iteration </li>
-<li> **(Tour Improvement)** If the iteration count is multiple of 5, apply 2-opt </li>
-<li> **(Best Solution Update)** If newly generated solution has a better objective then the incumbent solution then apply 3-opt to the newly generated solution to improve the tour quality and make it the incumbent solution. </li>
-<li> **(Shuffle to Reset)** If there hasn't been an improvement in $\gamma$ iteration, then assign incumbent solution to the current solution and shuffle the route. Also clear the tabu list. </li>
-</ol>
+3. **(Insertion Candidate)** Randomly choose one insertion partition and determine the best insertion candidate from this partition 
+4. **(Deletion Chains)** Determine the deletion chains. 
+5. **(Deletion Candidate)** Determine the best deletion candidate from deletion chains 
+6. **(Insertion or Deletion)** Compare the results of the insertion and deletion then apply the best one. If the best move is deletion then declare all vertices of deletion tabu for $\theta$ iteration
+7. **(Tour Improvement)** If the iteration count is multiple of 5, apply 2-opt
+8. **(Best Solution Update)** If newly generated solution has a better objective then the incumbent solution then apply 3-opt to the newly generated solution to improve the tour quality and make it the incumbent solution.
+9. **(Shuffle to Reset)** If there hasn't been an improvement in $\gamma$ iteration, then assign incumbent solution to the current solution and shuffle the route. Also clear the tabu list.
